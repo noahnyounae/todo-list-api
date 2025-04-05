@@ -22,6 +22,7 @@ public class TodoService {
     }
 
     public Todo saveTodo(Todo todo) {
+        // The createdDate will be automatically set by @CreationTimestamp
         return todoRepository.save(todo);
     }
 

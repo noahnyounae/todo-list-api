@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import org.hibernate.annotations.CreationTimestamp;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -16,6 +20,10 @@ public class Todo {
     private String description;
     private boolean recurring;
     private boolean done;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    private Date createdDate;
 
     // Constructeurs
     public Todo() {
@@ -66,5 +74,9 @@ public class Todo {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
     }
 }
