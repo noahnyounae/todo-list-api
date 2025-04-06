@@ -20,6 +20,8 @@ public class Todo {
     private String description;
     private boolean recurring;
     private boolean done;
+    private boolean daily;
+    private Date lastReset;
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
@@ -33,6 +35,7 @@ public class Todo {
         this.title = title;
         this.description = description;
         this.recurring = recurring;
+        this.daily = false; // par défaut
     }
 
     // Getters et Setters
@@ -74,6 +77,22 @@ public class Todo {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public boolean isDaily() {
+        return daily;
+    }
+
+    public void setDaily(boolean daily) {
+        this.daily = daily;
+    }
+
+    public Date getLastReset() {
+        return lastReset;
+    }
+
+    public void setLastReset(Date lastReset) {
+        this.lastReset = lastReset;
     }
 
     public Date getCreatedDate() {

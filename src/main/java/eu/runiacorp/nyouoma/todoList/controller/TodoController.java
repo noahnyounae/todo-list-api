@@ -48,4 +48,10 @@ public class TodoController {
         todoService.deleteTodo(id);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/reset-daily")
+    public ResponseEntity<Void> resetDailyTodos() {
+        todoService.strictResetDailyTodos();
+        return ResponseEntity.ok().build();
+    }
 }

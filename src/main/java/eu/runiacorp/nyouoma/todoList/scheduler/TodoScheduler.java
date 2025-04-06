@@ -14,9 +14,7 @@ public class TodoScheduler {
     // Exécuté toutes les minutes (60000 millisecondes)
     @Scheduled(fixedRate = 60000)
     public void processRecurringTodos() {
-        // Ici vous pouvez implémenter la logique pour vérifier et recréer
-        // les todos récurrents selon vos critères (par exemple, ajouter une nouvelle instance).
-        System.out.println("Vérification des todos récurrents...");
-        // Exemple : parcourir la liste et traiter ceux marqués comme récurrents
+        // Traitement des todos récurrents et daily
+        todoService.resetDailyTodos();
     }
 }
